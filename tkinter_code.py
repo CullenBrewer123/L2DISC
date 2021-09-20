@@ -19,14 +19,14 @@ dice_number_input.grid(row=7, column=2)
 list_of_dice = []
 
 
-
 def submit():
+    total = 0
     dice_type = dice_type_input.get()
     num_of_dice = dice_number_input.get()
     for i in range(int(num_of_dice)):
         list_of_dice.append(random.randint(1, int(dice_type)))
-    for ele in range(0, len(list_of_dice)):
-        total = total + list_of_dice[ele]
+    for g in range(0, len(list_of_dice)):
+        total = total + list_of_dice[g]
 
     print("total:", total)
 
