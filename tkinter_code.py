@@ -29,6 +29,7 @@ def submit():
         total = total + list_of_dice[g]
 
     print("total:", total)
+    print("list:", list_of_dice)
 
 
 submit_button = Button(text="Submit", command=submit).grid(row=10, column=2)
