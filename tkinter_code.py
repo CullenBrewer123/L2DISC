@@ -16,11 +16,10 @@ dice_number_input_variable = IntVar()
 dice_number_input = Entry()
 dice_number_input.grid(row=7, column=2)
 
-list_of_dice = []
-
 
 def submit():
     total = 0
+    list_of_dice = []
     dice_type = dice_type_input.get()
     num_of_dice = dice_number_input.get()
     for i in range(int(num_of_dice)):
@@ -30,6 +29,7 @@ def submit():
 
     print("total:", total)
     print("list:", list_of_dice)
+
 
 
 submit_button = Button(text="Submit", command=submit).grid(row=10, column=2)
