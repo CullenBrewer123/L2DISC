@@ -30,6 +30,6 @@ dice_number_input = Entry()
 dice_number_input.grid(row=7, column=2)
 root.bind(('<Return>'), lambda event:submit())
 
-submit_button = Button(text="Submit", command=submit).grid(row=10, column=2)
+submit_button = Button(text="ROLL", command=submit).grid(row=10, column=2)
 
 root.mainloop()
