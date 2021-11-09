@@ -32,11 +32,6 @@ def submit():
 
 
 
-
 submit_button = Button(text="Submit", command=submit).grid(row=10, column=2)
-
-top = Toplevel()
-total_result_display = Label(top, Text= "Total:").pack
-list_display = Label(top, Text= "List:").pack
 
 root.mainloop()
