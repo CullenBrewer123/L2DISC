@@ -29,9 +29,11 @@ def submit():
 
     print("total:", total)
     print("list:", list_of_dice)
+    Label(text="List: {}".format(list_of_dice)).grid(row=11, column=2)
+    Label(text="Total: {}".format(total)).grid(row=12, column=2)
 
 
-
+root.bind('<Return>', lambda event: submit())
 submit_button = Button(text="Submit", command=submit).grid(row=10, column=2)
 
 root.mainloop()
