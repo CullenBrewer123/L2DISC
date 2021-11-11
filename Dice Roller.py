@@ -1,4 +1,3 @@
-import tkinter as tk
 import random
 import time
 
@@ -33,4 +32,3 @@ while True:
     if num_of_rolls != 1:
         print("The Total Value is {}".format(total))
     print("Individual Dice rolls are: {}".format(list_of_dice))
-

@@ -1,4 +1,5 @@
 import random
+import os
 from tkinter import *
 
 root = Tk()
@@ -20,12 +21,15 @@ dice_number_input.grid(row=7, column=2)
 def submit():
     total = 0
     list_of_dice = []
-    dice_type = dice_type_input.get()
-    num_of_dice = dice_number_input.get()
-    for i in range(int(num_of_dice)):
-        list_of_dice.append(random.randint(1, int(dice_type)))
-    for g in range(0, len(list_of_dice)):
-        total = total + list_of_dice[g]
+    dice_type = int(dice_type_input.get())
+    num_of_dice = int(dice_number_input.get())
+    if (dice_type > 100 or num_of_dice > 100):
+        os.system("msg %username% Error; Values cannot be above 100")
+        return
+    for i in range(num_of_dice):
+        list_of_dice.append(random.randint(1, dice_type))
+    for i in range(0, len(list_of_dice)):
+        total = total + list_of_dice[i]
 
     print("total:", total)
     print("list:", list_of_dice)
