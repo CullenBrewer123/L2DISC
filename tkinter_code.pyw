@@ -38,6 +38,7 @@ def submit(): #This is the main chunk of code that gets the users input and rand
 
 
 root.bind('<Return>', lambda event: submit()) #This is a small line of code that allows the user to use the enter/return key to move from one input to another quickly.#
+root.bind('<Escape>', lambda event: root.destroy()) #
 submit_button = Button(text="Submit", command=submit).grid(row=10, column=2) #This is the submit button and it calls the function when clicked.#
 
 root.mainloop()
