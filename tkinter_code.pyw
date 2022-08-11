@@ -1,9 +1,21 @@
 import random
 import os
 from tkinter import *
+import ctypes
+
+# UI theme colours & other
+BaseBG = ("grey16",)
+BG = ("grey30",)
+FG = ("grey80",)
+FONT = ("Calibri")
 
 root = Tk()
+root.configure(bg=BaseBG)
 root.title("Dice Roller")
+screensize = ctypes.windll.user32.GetSystemMetrics(0), ctypes.windll.user32.GetSystemMetrics(1) # read screen size using ctypes lib
+windowsize = (300,400); adjustcenter = (round(screensize[0]/2-windowsize[0]/2),round(screensize[1]/2-windowsize[1]/2)) # set window size and center
+root.geometry(f"{windowsize[0]}x{windowsize[1]}+{adjustcenter[0]}+{adjustcenter[1]}")  # window size and centered
+
 
 main_header = Label(text="This is a Simple to Use Dice Roller").grid(row=1, column=2)
 
@@ -17,6 +29,7 @@ dice_number_input_variable = IntVar() # Same type of input box only this is for 
 dice_number_input = Entry()
 dice_number_input.grid(row=7, column=2)
 
+#def clear():
 
 def submit(): # This is the main chunk of code that gets the users input and randomizies it. Similar to the other code with some added lines related to Tkinter
     total = 0
